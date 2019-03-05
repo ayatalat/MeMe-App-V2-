@@ -25,8 +25,6 @@ class SentMemesCollectionController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: dimensionForWidth, height: dimensionForHeight)
     }
 
-  
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
@@ -62,8 +60,5 @@ class SentMemesCollectionController: UICollectionViewController {
         controller = storyboard?.instantiateViewController(withIdentifier: "ImagePickerController") as! ImagePickerController
         present(controller, animated: true, completion: nil)
     }
-    
-    
-
 
 }

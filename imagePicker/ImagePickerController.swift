@@ -69,7 +69,6 @@ UINavigationControllerDelegate,  UITextFieldDelegate{
         let memedImage = generateMemedImage()
         let meme = Meme(topText: toptxt.text!, bottomText: bottemtxt.text!, image: imagePicker.image!, memedImage: memedImage)
         (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
-        print("Meme Saved")
         return meme
     }
     
@@ -94,7 +93,6 @@ UINavigationControllerDelegate,  UITextFieldDelegate{
         let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityController.completionWithItemsHandler = { activity, success, items, error in
             if(success) {
-                
                 self.save()
             }
             self.dismiss(animated : true, completion: nil)
@@ -148,6 +146,7 @@ UINavigationControllerDelegate,  UITextFieldDelegate{
         imagePicker.image = nil
         toptxt.text = "TOP"
         bottemtxt.text = "BOTTOM"
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
