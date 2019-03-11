@@ -22,14 +22,16 @@ UINavigationControllerDelegate,  UITextFieldDelegate{
     
     func prepareTextField(textField: UITextField, text: String) {
         textField.delegate = self
+        textField.text = text
+        let memeTextAttributes:[String:Any] = [
+            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedStringKey.strokeWidth.rawValue: -2.0]
+        
+        textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
-        let memeTextAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
-            NSAttributedStringKey.strokeWidth: -2.0,
-            NSAttributedStringKey.strokeColor : UIColor.white,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)] as [NSAttributedStringKey : Any]
-
-        textField.attributedText = NSAttributedString(string: text, attributes: memeTextAttributes)
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {

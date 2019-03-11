@@ -5,8 +5,8 @@ import UIKit
 class SentMemesCollectionController: UICollectionViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
-    var memes : [Meme]! {
-        return (UIApplication.shared.delegate as! AppDelegate).memes
+    var memes : [Meme]!{
+           return (UIApplication.shared.delegate as! AppDelegate).memes
     }
 
     override func viewDidLoad() {
